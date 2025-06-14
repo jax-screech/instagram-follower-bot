@@ -6,9 +6,9 @@ import schedule
 USERNAME = "_projecttt_"
 PASSWORD = "example@123"
 
-tags = ["football", "opium", "coding", "lifestyle", "gaming"]
+tags = ["football", "music", "coding", "lifestyle", "gaming"]
 
-comments = ["Cute!", "Nice!", "Great work!", "Good job!"]
+comments = ["Nice job!", "Great work!", "Good job!", "Very cool!", "Cute"]
 
 def search_tags():
     client = Client()
@@ -22,14 +22,14 @@ def search_tags():
     hashtag_posts = client.hashtag_medias_recent(tag_choice)
 
     print(f"searched for the tag {tag_choice}")
-    print(f"interacting with {num_interaction_posts} post ...")
+    print(f"interacting with {num_interaction_posts} post...")
 
-    chosen_posts_ids = {}
+    chosen_posts_ids = ()
 
     for i in range(num_interaction_posts):
         insertion_index = r.randint(0, len(hashtag_posts) - 1)
         while insertion_index in chosen_posts_ids:
-            insertion_index = r.randint(0, len(hashtag_posts) - 1)
+            insertion_index = r.randint(0, len(hashtag_posts ) - 1)
             chosen_posts_ids.append(insertion_index)
             for i in chosen_posts_ids:
                 print(f"Interacting with the post '{hashtag_posts[i].caption_text}'")
