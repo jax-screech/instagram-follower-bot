@@ -86,7 +86,7 @@ time_2 = str(r.randint(13, 15)) + ":" + str(r.randint(10, 59))
 schedule.every().day.at(time_1).do(search_tags)
 schedule.every().day.at(time_2).do(search_tags)
 
-print(f"The scheduled times are:{time_1} and {time_2}")
+print(f"The scheduled times are:{time_1} and {time_2} to perform the actions")
 
 while True:
     schedule.run_pending()
