@@ -58,27 +58,27 @@ def search_tags():
                         try:
                             client.user_follow(user_id)
                         except Exception as error:
-                            print("Too many follow requests.Slow down following")
+                            print("Too many follow requests at once.Slow down following")
 
-                            print("Followed the user")
+                            print(f"Followed the user {user_id}")
                     if (like):
                         time.sleep(r.randint(3000, 9000)/1000)
 
                         try:
-                            client.user_like(user_id)
+                            client.media_like(media_id, r.choice(comments))
                         except Exception as error:
-                            print("Too many likes.Slow down liking")
+                            print("Too many likes at once.Slow down liking")
 
-                            print("liked the post")
+                            print(f"Added a like to the post with ID {media_id}")
                     if (comment):
                         time.sleep(r.randint(3000, 9000)/1000)
 
                         try:
-                            client.user_comment(user_id)
+                            client.media_comment(media_id)
                         except Exception as error:
-                            print("Too many commented.Slow down commenting")
+                            print("Too many commented at once.Slow down commenting")
 
-                            print("commented on the post")
+                            print(f"Added a comment on the post {media_id}")
 
 time_1 = str(r.randint(10, 12)) + ":" + str(r.randint(10, 59))
 time_2 = str(r.randint(13, 15)) + ":" + str(r.randint(10, 59))
